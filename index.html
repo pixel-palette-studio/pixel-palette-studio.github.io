@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Palette Studio — Design · Stationery · Web</title>
+<meta name="description" content="Pixel Palette Studio: graphic design, brand stationery, websites and custom digital solutions for small businesses, Instagram brands and creators.">
+<meta property="og:title" content="Pixel Palette Studio">
+<meta property="og:description" content="Creative design. Thoughtful digital experiences. Stationery, packaging and websites for small businesses.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F6EFE6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232A282C'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-style='italic' font-size='30' fill='%23F2D9D2' text-anchor='middle'%3Epp%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F6EFE6;
+    --paper: #FDFAF5;
+    --ink: #2A282C;
+    --ink-soft: #5B5760;
+    --muted: #8D8890;
+    --line: #DDD3C6;
+    --rose: #C98A80;
+    --rose-soft: #F2E0DB;
+    --rose-mid: #EBCBC4;
+    --lav: #E4E0F0;
+    --lav-mid: #CFC8E3;
+    --lav-ink: #8A80B5;
+    --sand: #EFE6D8;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --radius: 18px;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; line-height: 1.1; letter-spacing: -0.01em; }
+  em, .it { font-style: italic; color: var(--rose); }
+  p { margin: 0; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--rose); font-weight: 500;
+  }
+  .eyebrow.lav { color: var(--lav-ink); }
+  .lead { color: var(--ink-soft); font-size: 17px; max-width: 520px; }
+  section { padding: 96px 0; }
+  .sec-head { display: grid; gap: 14px; margin-bottom: 48px; }
+  .sec-head h2 { font-size: clamp(40px, 6vw, 64px); }
+
+  /* ---------- nav ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--cream) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
+  }
+  header.nav.scrolled { border-color: var(--line); }
+  .nav-in { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand .mark { font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--rose); line-height: 1; }
+  .brand .name { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: var(--paper) !important;
+    padding: 12px 22px; border-radius: 999px; text-decoration: none;
+    font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500;
+    border: 1px solid var(--ink); cursor: pointer; font-family: var(--sans);
+    transition: transform .15s, background .15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--ink) !important; }
+  .btn.light { background: var(--rose-soft); color: var(--ink) !important; border-color: var(--rose-soft); }
+  .nav-links .btn { padding: 9px 18px; font-size: 12px; }
+  .menu-btn { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+  .menu-btn span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: .2s; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 64px 0 40px; }
+  .hero-top { display: flex; justify-content: space-between; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 48px; gap: 16px; flex-wrap: wrap; }
+  .hero h1 { font-size: clamp(56px, 11vw, 132px); line-height: .95; }
+  .hero h1 em { display: block; }
+  .hero-row { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; margin-top: 40px; }
+  .hero-tag { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; margin-bottom: 12px; max-width: 460px; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .orbit { position: relative; width: 150px; height: 150px; border: 1px solid #B9B4BC; border-radius: 50%; }
+  .orbit::after { content: ""; position: absolute; width: 40px; height: 40px; background: var(--lav-mid); border-radius: 50%; left: -4px; bottom: 2px; }
+
+  /* stage illustration */
+  .stage {
+    position: relative; margin-top: 48px; border-radius: 28px; overflow: hidden;
+    background: var(--rose-soft); aspect-ratio: 16 / 9; min-height: 340px;
+  }
+  .stage .lav-blob { position: absolute; left: 0; bottom: 0; width: 36%; height: 55%; background: var(--lav); border-top-right-radius: 220px; }
+  .stage .sun { position: absolute; right: 7%; top: -10%; width: 17%; aspect-ratio: 1; background: var(--rose-mid); border-radius: 50%; }
+  .card { position: absolute; border-radius: 6px; box-shadow: 0 14px 30px rgba(42,40,44,.12); }
+  .thank { left: 6%; top: 12%; width: 25%; aspect-ratio: .68; background: var(--rose-soft); transform: rotate(-4deg); display: grid; place-content: center; text-align: center; gap: 4px; border: 1px solid #ecd6d0; }
+  .thank .arc { width: 34%; aspect-ratio: 2; border: 1.5px solid var(--rose); border-bottom: 0; border-radius: 100px 100px 0 0; margin: 0 auto 6px; }
+  .thank b { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(14px, 2.6vw, 30px); }
+  .thank small { font-size: clamp(6px, .8vw, 9px); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); }
+  .bc { width: 26%; aspect-ratio: 1.6; padding: 3% 3%; display: flex; flex-direction: column; justify-content: space-between; }
+  .bc .pp { font-family: var(--serif); font-style: italic; font-size: clamp(14px, 2.2vw, 26px); }
+  .bc small { font-size: clamp(5px, .75vw, 9px); letter-spacing: .2em; text-transform: uppercase; }
+  .bc.dark { background: var(--ink); color: var(--rose-mid); left: 11%; top: 58%; transform: rotate(-8deg); }
+  .bc.light { background: var(--paper); left: 24%; top: 64%; transform: rotate(3deg); }
+  .browser { left: 33%; top: 12%; width: 54%; background: var(--paper); border-radius: 10px; overflow: hidden; }
+  .browser .bar { height: 26px; background: var(--sand); display: flex; align-items: center; gap: 5px; padding: 0 12px; }
+  .browser .bar i { width: 6px; height: 6px; background: #C9BFB1; border-radius: 50%; }
+  .browser .bar u { margin-left: 14px; height: 10px; width: 40%; background: var(--paper); border-radius: 10px; }
+  .browser .body { padding: 4%; display: grid; grid-template-columns: 1fr 1fr; gap: 4%; }
+  .browser .body .t { font-family: var(--serif); font-size: clamp(11px, 2vw, 24px); line-height: 1.15; }
+  .browser .body .t em { display: block; }
+  .browser .body .chip { display: inline-block; margin-top: 10px; background: var(--ink); color: var(--paper); font-size: clamp(5px, .7vw, 8px); letter-spacing: .15em; padding: 5px 12px; border-radius: 99px; }
+  .browser .arch { aspect-ratio: 1.8; background: var(--lav-mid); border-radius: 80px 80px 8px 8px; position: relative; overflow: hidden; }
+  .browser .arch::after { content: ""; position: absolute; right: 0; bottom: -20%; width: 35%; aspect-ratio: 1; border-radius: 50%; background: var(--rose-mid); }
+  .browser .tiles { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3%; }
+  .browser .tiles span { aspect-ratio: 1.8; border-radius: 4px; }
+  .phone { right: 4%; top: 52%; width: 14%; aspect-ratio: .5; background: var(--paper); border: 5px solid var(--ink); border-radius: 18px; transform: rotate(4deg); padding: 10% 8%; display: grid; grid-template-rows: auto 1fr auto; gap: 6%; }
+  .phone b { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(5px, .9vw, 11px); }
+  .phone .ph-arch { background: var(--rose-mid); border-radius: 40px 40px 6px 6px; }
+  .phone .ph-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .phone .ph-grid span { aspect-ratio: 1.2; border-radius: 3px; }
+  .c1 { background: var(--rose-soft); } .c2 { background: var(--lav); } .c3 { background: var(--sand); } .c4 { background: var(--rose-mid); }
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
+  .pillars span:nth-child(2) { text-align: center; } .pillars span:nth-child(3) { text-align: center; } .pillars span:last-child { text-align: right; }
+
+  /* ---------- design & branding ---------- */
+  .split { display: grid; grid-template-columns: 1fr 1.45fr; gap: 64px; }
+  .split .side { position: sticky; top: 100px; align-self: start; display: grid; gap: 18px; }
+  .note { border-left: 3px solid var(--rose-mid); padding: 4px 0 4px 16px; font-size: 14px; color: var(--ink-soft); margin-top: 24px; }
+  .note b { color: var(--ink); font-weight: 600; }
+  .list { border-top: 1.5px solid var(--ink); }
+  .item { display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .item h3 { font-size: 22px; display: flex; gap: 10px; align-items: baseline; }
+  .item h3 sup { font-family: var(--sans); font-size: 11px; color: var(--muted); letter-spacing: .1em; }
+  .item p { color: var(--ink-soft); font-size: 15px; grid-column: 1; }
+  .price { font-family: var(--serif); font-size: 22px; white-space: nowrap; text-align: right; }
+  .price small { display: block; font-family: var(--sans); font-size: 12px; color: var(--muted); }
+  .item.feature { background: var(--lav); border-radius: 14px; border: 0; padding: 22px 20px; margin-top: 16px; }
+  .item .price { grid-row: 1 / span 2; grid-column: 2; }
+
+  /* ---------- web design ---------- */
+  .web { background: var(--paper); }
+  .web-head { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; margin-bottom: 48px; }
+  .mini-browser { width: 300px; background: var(--paper); border-radius: 12px; box-shadow: 0 14px 30px rgba(42,40,44,.1); overflow: hidden; border: 1px solid var(--line); }
+  .mini-browser .bar { height: 24px; background: var(--sand); display: flex; align-items: center; gap: 5px; padding: 0 12px; }
+  .mini-browser .bar i { width: 6px; height: 6px; background: #C9BFB1; border-radius: 50%; }
+  .mini-browser .in { padding: 16px; }
+  .mini-browser .in p { font-family: var(--serif); font-size: 17px; margin-bottom: 12px; }
+  .mini-browser .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .mini-browser .row span { aspect-ratio: 1.1; border-radius: 6px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tile { border-radius: var(--radius); padding: 28px; background: var(--cream); border: 1px solid var(--line); display: grid; gap: 10px; align-content: start; transition: transform .2s, box-shadow .2s; }
+  .tile:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(42,40,44,.08); }
+  .tile.lav { background: var(--lav); border-color: var(--lav); }
+  .tile.dark { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .tile.dark p { color: #BDB8C0; }
+  .tile .num { font-size: 11px; letter-spacing: .15em; color: var(--muted); }
+  .tile h3 { font-size: 26px; }
+  .tile p { color: var(--ink-soft); font-size: 15px; }
+  .tile .price { text-align: left; font-size: 26px; margin-top: 12px; }
+  .tile .price .from { font-family: var(--sans); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: #A9A3AC; margin-right: 8px; }
+  .note.lav { border-color: var(--lav-mid); margin-top: 40px; }
+
+  /* ---------- add-ons ---------- */
+  .table { width: 100%; border-collapse: collapse; }
+  .table th { text-align: left; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 0 0 14px; border-bottom: 1.5px solid var(--ink); }
+  .table th:last-child, .table td:last-child { text-align: right; }
+  .table td { padding: 24px 16px 24px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .table td:first-child { font-family: var(--serif); font-size: 21px; width: 34%; }
+  .table td:nth-child(2) { color: var(--ink-soft); font-size: 15px; }
+  .table td:last-child { padding-right: 0; }
+  .good { margin-top: 48px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+  .good h3 { font-size: 28px; margin-top: 10px; }
+  .good h3 em { color: var(--lav-ink); display: block; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .pills span { background: var(--sand); border: 1px solid #DCCFBD; border-radius: 99px; padding: 7px 16px; font-size: 14px; }
+
+  /* ---------- packages ---------- */
+  .pkgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .pkg { position: relative; overflow: hidden; border-radius: 22px; padding: 32px 28px 120px; display: flex; flex-direction: column; gap: 14px; }
+  .pkg.p1 { background: var(--rose-soft); }
+  .pkg.p2 { background: var(--lav); }
+  .pkg.p3 { background: var(--ink); color: var(--paper); }
+  .pkg .eyebrow { font-size: 11px; }
+  .pkg.p2 .eyebrow { color: var(--lav-ink); }
+  .pkg.p3 .eyebrow { color: var(--rose-mid); }
+  .pkg h3 { font-size: 34px; }
+  .pkg h3 em { display: block; color: inherit; }
+  .pkg .desc { font-size: 15px; color: var(--ink-soft); }
+  .pkg.p3 .desc { color: #BDB8C0; }
+  .pkg .big { font-family: var(--serif); font-size: 64px; line-height: 1; margin: 18px 0 8px; padding-bottom: 24px; border-bottom: 1.5px solid var(--rose); }
+  .pkg.p2 .big { border-color: var(--lav-ink); }
+  .pkg.p3 .big { border-color: #55515A; }
+  .pkg ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; font-size: 15px; }
+  .pkg li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
+  .pkg li::before { content: "—"; color: var(--rose); }
+  .pkg.p2 li::before { color: var(--lav-ink); }
+  .pkg.p3 li::before { color: var(--rose-mid); }
+  .pkg .deco { position: absolute; right: -30px; bottom: -40px; width: 150px; height: 150px; border-radius: 50%; }
+  .pkg.p1 .deco { background: var(--rose-mid); }
+  .pkg.p2 .deco { background: var(--lav-mid); width: 190px; height: 190px; border-radius: 100px 100px 0 0; bottom: -60px; }
+  .pkg.p3 .deco { background: #5D5470; width: 70px; height: 70px; right: 46px; bottom: 54px; }
+  .pkg.p3::after { content: ""; position: absolute; right: -24px; bottom: -40px; width: 120px; height: 120px; border-radius: 50%; border: 1px solid #77717B; }
+  .pkg .btn { margin-top: 18px; align-self: flex-start; position: relative; z-index: 1; }
+  .pkg.p3 .btn { background: var(--rose-soft); color: var(--ink) !important; border-color: var(--rose-soft); }
+
+  /* ---------- process ---------- */
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; position: relative; }
+  .steps::before { content: ""; position: absolute; top: 25px; left: 25px; right: 10%; height: 1px; background: var(--line); }
+  .step { position: relative; display: grid; gap: 10px; align-content: start; }
+  .dot { width: 50px; height: 50px; border-radius: 50%; display: grid; place-content: center; font-family: var(--serif); font-size: 17px; margin-bottom: 14px; }
+  .step:nth-child(1) .dot { background: var(--rose-soft); }
+  .step:nth-child(2) .dot { background: var(--rose-mid); }
+  .step:nth-child(3) .dot { background: var(--lav); }
+  .step:nth-child(4) .dot { background: var(--lav-mid); }
+  .step:nth-child(5) .dot { background: var(--ink); color: var(--paper); }
+  .step h3 { font-size: 22px; }
+  .step p { font-size: 14px; color: var(--ink-soft); }
+  .terms { margin-top: 72px; background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 48px; }
+  .terms h3 { font-size: 40px; margin: 10px 0 28px; }
+  .terms ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+  .terms li { display: grid; grid-template-columns: 40px 1fr; padding: 18px 0; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-soft); }
+  .terms li i { font-family: var(--serif); color: var(--rose); }
+  .terms li b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- contact ---------- */
+  .contact { background: var(--ink); color: var(--paper); }
+  .contact .eyebrow { color: var(--rose-mid); }
+  .contact h2 { font-size: clamp(42px, 7vw, 84px); line-height: 1.02; margin: 18px 0 28px; max-width: 900px; }
+  .contact h2 em { color: var(--rose-soft); }
+  .contact .lead { color: #C9C4CC; max-width: 600px; }
+  .contact .sign { font-family: var(--serif); font-style: italic; font-size: 26px; margin-top: 24px; }
+  .contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; margin-top: 64px; align-items: start; }
+  .channels { display: grid; gap: 14px; }
+  .ch { display: grid; gap: 6px; border: 1px solid #4A464E; border-radius: 16px; padding: 20px 22px; text-decoration: none; transition: border-color .2s, background .2s; }
+  a.ch:hover { border-color: var(--rose-mid); background: #322F35; }
+  .ch small { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--rose-mid); }
+  .ch span { font-family: var(--serif); font-size: 20px; word-break: break-word; }
+  .ch .phones { display: grid; gap: 4px; }
+  .ch .phones a { text-decoration: none; }
+  .ch .phones a:hover { color: var(--rose-mid); }
+  form.enq { background: #322F35; border: 1px solid #4A464E; border-radius: 22px; padding: 32px; display: grid; gap: 16px; }
+  form.enq h3 { font-size: 28px; }
+  form.enq h3 em { color: var(--rose-soft); }
+  form.enq p.small { font-size: 14px; color: #A9A3AC; margin-top: -6px; }
+  label { display: grid; gap: 6px; font-size: 12px; letter-spacing: .15em; text-transform: uppercase; color: #BDB8C0; }
+  input, select, textarea {
+    font: 15px var(--sans); color: var(--paper); background: var(--ink);
+    border: 1px solid #4A464E; border-radius: 10px; padding: 12px 14px; width: 100%;
+    letter-spacing: normal; text-transform: none;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose-mid); }
+  textarea { min-height: 96px; resize: vertical; }
+  form.enq .btn { justify-content: center; background: var(--rose-soft); color: var(--ink) !important; border-color: var(--rose-soft); }
+  footer { background: var(--ink); color: #8D8890; border-top: 1px solid #3C3940; padding: 28px 0; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--rose-mid); }
+
+  .wa-float {
+    position: fixed; right: 20px; bottom: 20px; z-index: 60;
+    width: 56px; height: 56px; border-radius: 50%; background: #25D366;
+    display: grid; place-content: center; box-shadow: 0 10px 24px rgba(0,0,0,.2);
+    transition: transform .15s;
+  }
+  .wa-float:hover { transform: scale(1.06); }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 920px) {
+    section { padding: 72px 0; }
+    .split, .contact-grid, .good { grid-template-columns: 1fr; gap: 32px; }
+    .split .side { position: static; }
+    .pkgs { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+    .steps::before { display: none; }
+    .terms ol { grid-template-columns: 1fr; }
+    .web-head { grid-template-columns: 1fr; }
+    .mini-browser { display: none; }
+  }
+  @media (max-width: 760px) {
+    .nav-links { position: fixed; inset: 68px 0 auto 0; background: var(--cream); flex-direction: column; gap: 0; padding: 8px 24px 24px; border-bottom: 1px solid var(--line); display: none; }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 14px 0; width: 100%; border-bottom: 1px solid var(--line); font-size: 16px; }
+    .nav-links .btn { margin-top: 16px; justify-content: center; border-bottom: 0; padding: 14px; }
+    .menu-btn { display: block; }
+    .hero-row { grid-template-columns: 1fr; }
+    .orbit { display: none; }
+    .stage { aspect-ratio: 4 / 3.4; }
+    .thank { width: 30%; top: 8%; }
+    .browser { left: 36%; top: 8%; width: 60%; }
+    .bc { width: 36%; }
+    .bc.dark { left: 4%; top: 58%; } .bc.light { left: 22%; top: 68%; }
+    .phone { width: 20%; right: 6%; top: 50%; border-width: 3px; border-radius: 12px; }
+    .pillars { grid-template-columns: 1fr 1fr; font-size: 11px; }
+    .pillars span { text-align: left !important; }
+    .grid2 { grid-template-columns: 1fr; }
+    .item h3, .table td:first-child { font-size: 19px; }
+    .price { font-size: 19px; }
+    .table thead { display: none; }
+    .table, .table tbody, .table tr, .table td { display: block; width: 100%; }
+    .table tr { padding: 20px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; }
+    .table tr:first-child { border-top: 1.5px solid var(--ink); }
+    .table td { border: 0; padding: 0; width: auto !important; }
+    .table td:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+    .table td:last-child { grid-column: 2; grid-row: 1; }
+    .terms { padding: 28px 22px; }
+    .terms h3 { font-size: 32px; }
+    form.enq { padding: 24px 20px; }
+    .pkg .big { font-size: 54px; }
+  }
+  @media (max-width: 420px) {
+    .wrap { padding: 0 16px; }
+    .steps { grid-template-columns: 1fr; }
+    .item { grid-template-columns: 1fr; }
+    .item .price { grid-row: auto; grid-column: 1; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="Pixel Palette Studio home">
+      <span class="mark">pp</span><span class="name">Pixel Palette Studio</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#design">Design</a>
+      <a href="#web">Websites</a>
+      <a href="#addons">Add-ons</a>
+      <a href="#packages">Packages</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="btn">Let's talk</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-top"><span>Creative studio</span><span>Design · Stationery · Web</span></div>
+      <h1>Pixel Palette<em>Studio</em></h1>
+      <div class="hero-row">
+        <div>
+          <p class="hero-tag">Creative design. Thoughtful digital experiences.</p>
+          <p class="lead">Graphic design, brand stationery, websites, and custom digital solutions for businesses that want to stand out.</p>
+          <div class="hero-cta">
+            <a href="#packages" class="btn">View pricing</a>
+            <a href="https://wa.me/919321754752?text=Hi%20Pixel%20Palette%20Studio!%20I'd%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" class="btn ghost">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="orbit" aria-hidden="true"></div>
+      </div>
+
+      <div class="stage reveal" aria-hidden="true">
+        <div class="lav-blob"></div>
+        <div class="sun"></div>
+        <div class="card browser">
+          <div class="bar"><i></i><i></i><i></i><u></u></div>
+          <div class="body">
+            <div>
+              <div class="t">Made with care,<em>made for you.</em></div>
+              <span class="chip">SHOP NOW</span>
+            </div>
+            <div class="arch"></div>
+            <div class="tiles"><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span></div>
+          </div>
+        </div>
+        <div class="card thank"><div class="arc"></div><b>thank you</b><small>for supporting<br>a small business</small></div>
+        <div class="card bc dark"><span class="pp">pp</span><small>Pixel Palette<br>Design · Web</small></div>
+        <div class="card bc light"><span class="pp">pp</span><small>Pixel Palette Studio<br>Design · Web</small></div>
+        <div class="card phone"><b>New arrivals</b><div class="ph-arch"></div><div class="ph-grid"><span class="c2"></span><span class="c3"></span><span class="c3"></span><span class="c2"></span></div></div>
+      </div>
+
+      <div class="pillars"><span>Graphic design</span><span>Brand stationery</span><span>Websites</span><span>Custom digital</span></div>
+    </div>
+  </section>
+
+  <!-- DESIGN & BRANDING -->
+  <section id="design">
+    <div class="wrap split">
+      <div class="side reveal">
+        <span class="eyebrow">01 / Creative</span>
+        <h2 style="font-size:clamp(40px,6vw,64px)">Design &amp;<br><em>Branding</em></h2>
+        <p class="lead">Print-ready stationery and visual design for small businesses, Instagram brands, and creators: the small details that make an order feel personal.</p>
+        <p class="note"><b>Design-only pricing.</b> All prices cover design work and final print-ready files. Printing is not included unless explicitly stated in your quotation.</p>
+      </div>
+      <div class="list reveal">
+        <div class="item"><h3><sup>01</sup>Thank-you card design</h3><div class="price">₹199 – ₹399</div><p>A warm, on-brand note to tuck into every order.</p></div>
+        <div class="item"><h3><sup>02</sup>Business card design</h3><div class="price">₹299 – ₹599</div><p>Front and back layout styled to your brand.</p></div>
+        <div class="item"><h3><sup>03</sup>Packaging insert / care card</h3><div class="price">₹299 – ₹599</div><p>Care instructions, usage tips, or a short brand note.</p></div>
+        <div class="item"><h3><sup>04</sup>Product packaging design</h3><div class="price">₹799 – ₹1,999</div><p>Labels, boxes, sleeves, or pouches designed around your product.</p></div>
+        <div class="item"><h3><sup>05</sup>Thank-you card bundle</h3><div class="price">₹699 – ₹1,299</div><p>3–5 coordinated designs for different products, seasons, or occasions.</p></div>
+        <div class="item"><h3><sup>06</sup>Social media post design</h3><div class="price">₹199 – ₹399<small>per post</small></div><p>Feed posts for launches, offers, and announcements.</p></div>
+        <div class="item"><h3><sup>07</sup>Brand stationery bundle</h3><div class="price">₹999 – ₹1,999</div><p>A coordinated set of stationery pieces with one consistent look.</p></div>
+        <div class="item feature"><h3><sup>08</sup>Basic brand identity kit</h3><div class="price">₹1,499 – ₹3,499</div><p>May include a logo concept, colour palette, typography, and coordinated stationery designs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITE DESIGN -->
+  <section id="web" class="web">
+    <div class="wrap">
+      <div class="web-head reveal">
+        <div class="sec-head" style="margin:0">
+          <span class="eyebrow lav">02 / Digital</span>
+          <h2>Website<br><em>Design</em></h2>
+          <p class="lead">Designed and built by two IT engineers, so every site looks considered and works properly on every screen.</p>
+        </div>
+        <div class="mini-browser" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="in"><p>The <em>collection</em></p><div class="row"><span class="c1"></span><span class="c2"></span><span class="c3"></span></div></div>
+        </div>
+      </div>
+      <div class="grid2">
+        <article class="tile reveal"><span class="num">01</span><h3>Landing page</h3><p>A single page for product launches, campaigns, and promotions.</p><div class="price">₹1,499 – ₹2,999</div></article>
+        <article class="tile reveal"><span class="num">02</span><h3>Portfolio website</h3><p>A personal or professional showcase for projects, products, and creative work.</p><div class="price">₹2,499 – ₹4,999</div></article>
+        <article class="tile lav reveal"><span class="num">03</span><h3>Business website</h3><p>A website featuring your services, about information, and contact details.</p><div class="price">₹3,999 – ₹7,999</div></article>
+        <article class="tile lav reveal"><span class="num">04</span><h3>Product catalogue website</h3><p>Product galleries, collections, prices, and WhatsApp enquiry or order links.</p><div class="price">₹3,999 – ₹7,999</div></article>
+        <article class="tile reveal"><span class="num">05</span><h3>Booking website</h3><p>Service listings, booking forms, and appointment requests.</p><div class="price">₹4,999 – ₹9,999</div></article>
+        <article class="tile reveal"><span class="num">06</span><h3>E-commerce website</h3><p>Product pages, cart, checkout, and payment gateway integration.</p><div class="price">₹7,999 – ₹14,999</div></article>
+        <article class="tile lav reveal"><span class="num">07</span><h3>Custom aesthetic website</h3><p>Pinterest-inspired layouts, visual galleries, and brand-specific styling.</p><div class="price">₹5,999 – ₹12,999</div></article>
+        <article class="tile dark reveal"><span class="num">08</span><h3>Custom web application</h3><p>Tailored features such as user accounts, dashboards, database integration, and custom workflows.</p><div class="price"><span class="from">Starting at</span>₹12,999</div></article>
+      </div>
+      <p class="note lav"><b>Final pricing depends on scope</b> — functionality, number of pages, and integrations. You receive a clear written quotation before any work begins.</p>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section id="addons">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">03 / Extras</span>
+        <h2>Add-on <em>Services</em></h2>
+        <p class="lead">Extend any project as your business grows: add pages, connect ordering and payments, or keep your site fresh.</p>
+      </div>
+      <table class="table reveal">
+        <thead><tr><th>Add-on</th><th>What it covers</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Additional website page</td><td>One extra page beyond the agreed scope.</td><td class="price">₹300 – ₹700</td></tr>
+          <tr><td>WhatsApp order integration</td><td>Buttons or links that open a ready-to-send enquiry or order message.</td><td class="price">₹300 – ₹800</td></tr>
+          <tr><td>Payment gateway integration</td><td>Connecting a payment provider for online checkout.</td><td class="price">₹1,000 – ₹2,500</td></tr>
+          <tr><td>Website maintenance</td><td>Ongoing upkeep, routine checks, and small fixes.</td><td class="price">₹499 – ₹1,499<small>per month</small></td></tr>
+          <tr><td>Website content updates</td><td>Updating text, images, prices, or products on your site.</td><td class="price">₹299 – ₹799</td></tr>
+          <tr><td>Additional design revision round</td><td>One extra round of changes beyond those included.</td><td class="price">₹100 – ₹300</td></tr>
+        </tbody>
+      </table>
+      <div class="good reveal">
+        <div><span class="eyebrow lav">Good to know</span><h3>Charged <em>separately</em></h3></div>
+        <div>
+          <p style="color:var(--ink-soft)">The following are additional unless they are specified in your quotation:</p>
+          <div class="pills"><span>Third-party service charges</span><span>Domain registration</span><span>Hosting</span><span>Subscriptions</span><span>Printing</span><span>Shipping</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" style="padding-top:24px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">04 / Packages</span>
+        <h2>Bundled <em>Packages</em></h2>
+        <p class="lead">Curated combinations for brands that want everything to look like it belongs together.</p>
+      </div>
+      <div class="pkgs">
+        <article class="pkg p1 reveal">
+          <span class="eyebrow">Package 01</span>
+          <h3>Brand<em>Essentials</em></h3>
+          <p class="desc">The stationery trio for small businesses shipping their first orders.</p>
+          <div class="big">₹999</div>
+          <span class="eyebrow">Includes</span>
+          <ul><li>One thank-you card design</li><li>One business card design</li><li>One packaging insert design</li></ul>
+          <a class="btn" data-pkg="Brand Essentials (₹999)" href="#contact">Enquire</a>
+          <div class="deco"></div>
+        </article>
+        <article class="pkg p2 reveal">
+          <span class="eyebrow">Package 02</span>
+          <h3>Digital<em>Storefront</em></h3>
+          <p class="desc">A compact website to showcase products and take enquiries.</p>
+          <div class="big">₹4,999</div>
+          <span class="eyebrow">Includes</span>
+          <ul><li>A small website with up to five pages or sections, depending on project scope</li><li>Product gallery or portfolio</li><li>WhatsApp enquiry / order integration</li><li>Mobile-friendly layout</li></ul>
+          <a class="btn" data-pkg="Digital Storefront (₹4,999)" href="#contact">Enquire</a>
+          <div class="deco"></div>
+        </article>
+        <article class="pkg p3 reveal">
+          <span class="eyebrow">Package 03</span>
+          <h3>Brand<em>+ Website</em></h3>
+          <p class="desc">A matching online and offline presence, designed together.</p>
+          <div class="big">₹6,499</div>
+          <span class="eyebrow">Includes</span>
+          <ul><li>A basic business or product catalogue website</li><li>One thank-you card design</li><li>One business card design</li><li>One packaging insert design</li></ul>
+          <a class="btn" data-pkg="Brand + Website (₹6,499)" href="#contact">Enquire</a>
+          <div class="deco"></div>
+        </article>
+      </div>
+      <p class="note"><b>Bundled prices apply to the defined scope.</b> Complex functionality, payment integration, printing, domain, hosting, and paid subscriptions may incur additional charges. The exact scope is agreed upon before work begins.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS & TERMS -->
+  <section id="process" style="padding-top:24px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow lav">05 / Working together</span>
+        <h2>Our <em>process</em></h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><div class="dot">1</div><h3>Discovery</h3><p>Understand the brand, audience, and requirements.</p></div>
+        <div class="step"><div class="dot">2</div><h3>Concept</h3><p>Establish the visual direction and project scope.</p></div>
+        <div class="step"><div class="dot">3</div><h3>Design &amp; development</h3><p>Create the approved designs or website.</p></div>
+        <div class="step"><div class="dot">4</div><h3>Review</h3><p>Collect feedback and make the included revisions.</p></div>
+        <div class="step"><div class="dot">5</div><h3>Delivery</h3><p>Hand over the final files or deploy the website, as agreed.</p></div>
+      </div>
+      <div class="terms reveal">
+        <span class="eyebrow">The fine print</span>
+        <h3>Project <em>terms</em></h3>
+        <ol>
+          <li><i>i.</i><span><b>Payment:</b> 50% advance, and 50% before final handover.</span></li>
+          <li><i>v.</i><span>Domain, hosting, paid software, printing, and third-party fees are separate unless explicitly included.</span></li>
+          <li><i>ii.</i><span>The number of included revisions is clearly specified in each quotation.</span></li>
+          <li><i>vi.</i><span>Website maintenance is a separate service unless included in the package.</span></li>
+          <li><i>iii.</i><span>Additional revisions or changes to the approved scope may incur extra charges.</span></li>
+          <li><i>vii.</i><span>Prices are indicative starting / launch prices and may vary by complexity.</span></li>
+          <li><i>iv.</i><span>Delivery timelines are confirmed after scope approval.</span></li>
+          <li><i>viii.</i><span>Final deliverables and ownership or usage rights are agreed upon in writing.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <span class="eyebrow">Let's begin</span>
+      <h2>Your brand deserves its own little <em>corner of the internet.</em></h2>
+      <p class="lead">From thoughtful packaging details to a website that feels like your brand's own Pinterest board, Pixel Palette Studio helps small businesses build a distinctive and memorable presence.</p>
+      <p class="sign">Let's create something uniquely yours.</p>
+
+      <div class="contact-grid">
+        <div class="channels">
+          <a class="ch" href="https://www.instagram.com/pixel.palette.studio/" target="_blank" rel="noopener"><small>Instagram</small><span>@pixel.palette.studio</span></a>
+          <a class="ch" href="mailto:pixelpalettestudio926@gmail.com"><small>Email</small><span>pixelpalettestudio926@gmail.com</span></a>
+          <div class="ch"><small>Contact</small>
+            <span class="phones">
+              <a href="tel:+919321754752">+91 93217 54752</a>
+              <a href="tel:+919967629866">+91 99676 29866</a>
+            </span>
+          </div>
+        </div>
+
+        <form class="enq" id="enq">
+          <h3>Send an <em>enquiry</em></h3>
+          <p class="small">Fill this in and it opens WhatsApp with your message ready to send.</p>
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Business / brand<input name="brand" autocomplete="organization"></label>
+          <label>I'm interested in
+            <select name="service" id="service">
+              <option>Brand Essentials (₹999)</option>
+              <option>Digital Storefront (₹4,999)</option>
+              <option>Brand + Website (₹6,499)</option>
+              <option>Design &amp; branding (stationery, packaging, social posts)</option>
+              <option>Website design</option>
+              <option>Custom web application</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>Tell us a little about it<textarea name="msg" placeholder="What you sell, what you need, any timeline…"></textarea></label>
+          <button class="btn" type="submit">Send on WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Pixel Palette Studio</span>
+    <span><a href="https://www.instagram.com/pixel.palette.studio/" target="_blank" rel="noopener">Instagram</a> · <a href="mailto:pixelpalettestudio926@gmail.com">Email</a> · <a href="#top">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919321754752?text=Hi%20Pixel%20Palette%20Studio!" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.44-9.43 2.52 0 4.89.98 6.67 2.77a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.44 9.43m8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.8.72.7 5.8.7 12.06c0 2 .52 3.95 1.52 5.67L.6 23.62l6.03-1.58a11.33 11.33 0 0 0 5.42 1.38h.01c6.26 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.33-8.02"/></svg>
+</a>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', false);
+  }));
+
+  // "Enquire" on a package preselects it in the form
+  document.querySelectorAll('[data-pkg]').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('service').value = b.dataset.pkg;
+  }));
+
+  document.getElementById('enq').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const lines = [
+      'Hi Pixel Palette Studio!',
+      `Name: ${f.get('name')}`,
+      f.get('brand') ? `Brand: ${f.get('brand')}` : '',
+      `Interested in: ${f.get('service')}`,
+      f.get('msg') ? `\n${f.get('msg')}` : ''
+    ].filter(Boolean).join('\n');
+    window.open('https://wa.me/919321754752?text=' + encodeURIComponent(lines), '_blank', 'noopener');
+  });
+
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
